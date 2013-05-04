@@ -18,7 +18,7 @@ zstyle ':completion:*' menu select=2
 case $OS in
 
 "Darwin")
-    ./bash/growlnotify.sh
+    $CONFIG/bash/growlnotify.sh
     ;;
 "Debian")
     ;;
