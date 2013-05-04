@@ -1,0 +1,3 @@
+[submodule "emacs/lib/drupal-mode"]
+	path = emacs/lib/drupal-mode
+	url = git@github.com:nigelgbanks/drupal-mode
