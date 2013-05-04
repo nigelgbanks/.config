@@ -26,3 +26,5 @@
 	backup = "!backup() { current=`git current` && git push $1 self $current:backup && git push $1 origin $current:backup; }; backup"
 [hub]
 	protocol = ssh
+[push]
+	default = simple
