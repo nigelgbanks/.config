@@ -26,3 +26,7 @@ case $OS in
     $CONFIG/bash/growlnotify.sh
     ;;
 esac
+
+# Get the latest
+#===============================================================================
+cd $CONFIG && git pull && cd $HOME

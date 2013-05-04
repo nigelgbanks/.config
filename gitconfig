@@ -10,6 +10,7 @@
 	ci = commit
 	re = remote
 	aa = add --all :/
+	cached = diff --cached
 	amend = commit -a --amend
 	remote-branch = "!remote_branch() { git current | xargs -n 1 git push -u origin; }; remote_branch"
 	merged = "!merged() { git branch --merged $1 | grep -v '* '; }; merged"
