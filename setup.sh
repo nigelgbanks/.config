@@ -1,7 +1,5 @@
 #!/bin/bash
-
-# Get Platform info.
-source ./bash/platform.sh
+source ./env.sh
 
 case "$OS" in
 

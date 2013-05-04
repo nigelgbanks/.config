@@ -21,3 +21,5 @@ else
     OS=$(uname -s)
     VER=$(uname -r)
 fi
+## env
+CONFIG=$HOME/.config
