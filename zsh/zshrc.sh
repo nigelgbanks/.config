@@ -13,15 +13,16 @@ compinit
 # Show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
 
+# Alias hub to git
+if hash hub 2>/dev/null; then
+    eval "$(hub alias -s)"
+fi
+
 # Run platform specific Setup
 #===============================================================================
 case $OS in
 
 "Darwin")
     $CONFIG/bash/growlnotify.sh
-    ;;
-"Debian")
-    ;;
-"Red Hat")
     ;;
 esac

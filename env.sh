@@ -48,11 +48,11 @@ case $OS in
     ;;
 esac
 
-# System Specific Directories
+# System Specific
 #===============================================================================
-case $OS in
+case $HOST in
 
 "dev.local")
-
+    PATH=$PATH:$HOME/bin
     ;;
 esac
