@@ -1,6 +1,8 @@
 #!/bin/bash
 source ./env.sh
 
+# Run platform specific Setup
+#===============================================================================
 case "$OS" in
 
 "Darwin")  echo "Setup Mac enviroment"
@@ -15,6 +17,21 @@ case "$OS" in
 esac
 
 # Install oh-my-zsh
+#===============================================================================
 if [ ! -d "${HOME}/.oh-my-zsh" ]; then
    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+fi
+
+# Set up links to appropriate files in .config
+#===============================================================================
+rm $HOME/.git-completion.bash
+ln -s $CONFIG/bash/git-completion.bash $HOME/.git-completion.bash
+
+rm $HOME.emacs $HOME/.emacs.d
+ln -s $CONFIG/emacs $HOME/.emacs.d
+
+# Copy sensitive files from host system.
+#===============================================================================
+if [[ -n "$SSH_CLIENT" ]]; then
+    scp ${SSH_CLIENT%% *}:.gitconfig $HOME
 fi

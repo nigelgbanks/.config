@@ -1,10 +1,13 @@
-# Navigation
+# Navigation/Shortcuts
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias dt="downto"
 alias up="upto"
+alias ll="ls -l"
+alias lla="ls -la"
+alias xa="xargs"
 # Copy/Paste
 if [[ -n "$SSH_CLIENT" ]]; then
     alias pbcopy="ssh ${SSH_CLIENT%% *} pbcopy"
