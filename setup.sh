@@ -35,7 +35,7 @@ fi
 rm $HOME/.git-completion.bash
 ln -s $CONFIG/bash/git-completion.bash $HOME/.git-completion.bash
 
-rm $HOME/.emacs $HOME/.emacs.d
+rm -fr $HOME/.emacs $HOME/.emacs.d
 ln -s $CONFIG/emacs $HOME/.emacs.d
 
 rm $HOME/.zshrc
@@ -46,3 +46,8 @@ ln -s $CONFIG/zsh/zshrc.sh $HOME/.zshrc
 if [[ -n "$SSH_CLIENT" ]]; then
     scp ${SSH_CLIENT%% *}:~/.gitconfig $HOME
 fi
+
+# Update and init the submodules.
+#===============================================================================
+git submodule init
+git submodule update
