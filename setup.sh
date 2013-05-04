@@ -16,10 +16,18 @@ case "$OS" in
     ;;
 esac
 
-# Install oh-my-zsh
+# Set up home directory
 #===============================================================================
-if [ ! -d "${HOME}/.oh-my-zsh" ]; then
-   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+if [ ! -d "$DOWNLOADS" ]; then
+    mkdir $DOWNLOADS
+fi
+
+if [ ! -d "$TMP" ]; then
+    mkdir $TMP
+fi
+
+if [ ! -d "$PROJECTS" ]; then
+    mkdir $PROJECTS
 fi
 
 # Set up links to appropriate files in .config
@@ -27,11 +35,14 @@ fi
 rm $HOME/.git-completion.bash
 ln -s $CONFIG/bash/git-completion.bash $HOME/.git-completion.bash
 
-rm $HOME.emacs $HOME/.emacs.d
+rm $HOME/.emacs $HOME/.emacs.d
 ln -s $CONFIG/emacs $HOME/.emacs.d
+
+rm $HOME/.zshrc
+ln -s $CONFIG/zsh/zshrc.sh $HOME/.zshrc
 
 # Copy sensitive files from host system.
 #===============================================================================
 if [[ -n "$SSH_CLIENT" ]]; then
-    scp ${SSH_CLIENT%% *}:.gitconfig $HOME
+    scp ${SSH_CLIENT%% *}:~/.gitconfig $HOME
 fi

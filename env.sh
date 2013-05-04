@@ -1,5 +1,7 @@
 #!/bin/bash
-## Getting OS Information
+
+# Getting OS Information
+#===============================================================================
 if [ -f /etc/lsb-release ]; then
     . /etc/lsb-release
     DIST=$DISTRIB_ID
@@ -21,5 +23,36 @@ else
     OS=$(uname -s)
     VER=$(uname -r)
 fi
-## env
+# Global Directories
+#===============================================================================
 CONFIG=$HOME/.config
+
+# Platform Specific Directories
+#===============================================================================
+case $OS in
+
+"Darwin")
+    DOWNLOADS=$HOME/Downloads
+    PROJECTS=$HOME/Projects
+    TMP=$HOME/Temporary
+    ;;
+"Debian")
+    DOWNLOADS=$HOME/downloads
+    PROJECTS=$HOME/projects
+    TMP=$HOME/tmp
+    ;;
+"Red Hat")
+    DOWNLOADS=$HOME/downloads
+    PROJECTS=$HOME/projects
+    TMP=$HOME/tmp
+    ;;
+esac
+
+# System Specific Directories
+#===============================================================================
+case $OS in
+
+"dev.local")
+
+    ;;
+esac
