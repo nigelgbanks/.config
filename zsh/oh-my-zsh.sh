@@ -1,6 +1,7 @@
 #!/bin/zsh
 ZSH=$CONFIG/zsh/oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_CUSTOM=$CONFIG/zsh
+ZSH_THEME="nbanks"
 plugins=(git ssh-agent github rvm)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 case "$OS" in
