@@ -85,7 +85,8 @@
 (setq ibuffer-saved-filter-groups (quote (("default" ("dired" (mode . dired-mode)))))) ;; Group Dired buffers in iBuffer
 (setq-default dired-listing-switches "-alhv") ;; Make sizes human-readable by default, sort version numbers correctly, and put dotfiles and capital-letters first.
 (setq dired-recursive-copies 'always)
-
+;; Java
+(require 'jdibug)
 (add-hook 'java-mode-hook
           (lambda()
             (setq indent-tabs-mode nil)

@@ -9,6 +9,16 @@
             (copy-sequence (normal-top-level-add-to-load-path '(".")))
             (normal-top-level-add-subdirs-to-load-path)))
          load-path)))
+;; Append onto load-path so that they take precedence when loading.
+;; Hard coded for now but I will fix this in the future.
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/jdibug-0.5")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/ede")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/semantic/doc")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/eieio")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/cogre")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/common")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/speedbar")
+(add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/srecode")
 ;; Non package managed libraries. (recursive includes)
 (let ((default-directory "~/.emacs.d/lib"))
   (normal-top-level-append-recursively-to-load-path))
