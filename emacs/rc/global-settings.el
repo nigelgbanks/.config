@@ -1,8 +1,11 @@
 ;; Platform Defaults
+;;------------------------------------------------------------------------------
 (load "global-keymap.el")
 (load "platform.el")
 ;; Emacs Settings
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) ;; Turn off mouse interface early in startup to avoid momentary display
+;;------------------------------------------------------------------------------
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq inhibit-startup-message t)  ;; No splash screen
@@ -24,6 +27,12 @@
 (setq backup-directory-alist ;; Write backup files to own directory
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
+;; Load CEDET
+;;------------------------------------------------------------------------------
+(require 'cedet)
+(global-ede-mode 1)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
 ;; Show line numbers when using goto.
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
@@ -76,3 +85,9 @@
 (setq ibuffer-saved-filter-groups (quote (("default" ("dired" (mode . dired-mode)))))) ;; Group Dired buffers in iBuffer
 (setq-default dired-listing-switches "-alhv") ;; Make sizes human-readable by default, sort version numbers correctly, and put dotfiles and capital-letters first.
 (setq dired-recursive-copies 'always)
+
+(add-hook 'java-mode-hook
+          (lambda()
+            (setq indent-tabs-mode nil)
+            (setq c-basic-offset 4)
+            ))
