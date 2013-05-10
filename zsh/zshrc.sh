@@ -23,7 +23,6 @@ fi
 case $OS in
 
 "Darwin")
-    $CONFIG/bash/growlnotify.sh
     ;;
 esac
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>org.growl.irssi</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/nbanks/.config/bash/growlnotify.sh</string>
+    </array>
+    <key>ServiceDescription</key>
+    <string>Growl notification for IRSSI IRC</string>
+    <key>UserName</key>
+    <string>nbanks</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/nbanks</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
