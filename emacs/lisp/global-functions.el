@@ -74,3 +74,9 @@
   (newline)
   (forward-line -1)
   (indent-for-tab-command))
+
+(defun copy-full-path-to-kill-ring ()
+  "copy buffer's full path to kill ring"
+  (interactive)
+  (when buffer-file-name
+    (kill-new (file-truename buffer-file-name))))
