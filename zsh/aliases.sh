@@ -8,6 +8,7 @@ alias ut="upto"
 alias ll="ls -l"
 alias lla="ls -la"
 alias xa="xargs"
+alias t="tail -f"
 # Copy/Paste
 if [[ -n "$SSH_CLIENT" ]]; then
     alias pbcopy="ssh ${SSH_CLIENT%% *} pbcopy"
