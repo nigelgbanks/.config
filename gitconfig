@@ -2,7 +2,12 @@
 	editor = emacs
 [merge]
 	tool = emerge
+[mergetool "emerge"]
+	prompt = false
+	path = /Users/nbanks/.config/bash/git-emerge-command.sh
 [alias]
+	dt = difftool
+	mt = mergetool
 	st = status
 	last = log -l HEAD
 	co = checkout

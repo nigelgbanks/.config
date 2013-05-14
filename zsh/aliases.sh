@@ -39,6 +39,13 @@ case "$OS" in
 "Red Hat")
     ;;
 esac
+# Machine Dependent
+case "$HOST" in
+
+"hal.local")
+    alias rebuild="cd /Users/nbanks/Projects/fcrepo4 && mvn install -DskipTests && cd fcrepo-webapp && MAVEN_OPTS="-Xmx512m" mvnDebug jetty:run"
+    ;;
+esac
 alias modules-status='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && cd ..; done'
 alias modified-modules-status='modules-status | grep ✗'
 alias modules-update='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && git update && cd .. && done'

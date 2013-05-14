@@ -29,10 +29,10 @@
                  (concat user-emacs-directory "backups")))))
 ;; Load CEDET
 ;;------------------------------------------------------------------------------
-(require 'cedet)
-(global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;;(require 'cedet)
+;;(global-ede-mode 1)                      ; Enable the Project management system
+;;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
+;;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 ;; Show line numbers when using goto.
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
@@ -86,11 +86,10 @@
 (setq-default dired-listing-switches "-alhv") ;; Make sizes human-readable by default, sort version numbers correctly, and put dotfiles and capital-letters first.
 (setq dired-recursive-copies 'always)
 ;; Java
-(require 'jdibug)
+;;(require 'jdibug)
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 4
                                   tab-width 4
                                   indent-tabs-mode t)))
-(setq jdibug-connect-hosts "localhost:8000")
-
-(setq jdibug-source-paths '("~/projects/fcrepo4/"))
+;;(setq jdibug-connect-hosts "localhost:8000")
+;;(setq jdibug-source-paths '("~/projects/fcrepo4/"))
