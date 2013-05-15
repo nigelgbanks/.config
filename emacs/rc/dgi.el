@@ -1,4 +1,5 @@
-(require 'php-mode)
+(let ((default-directory "~/.emacs.d/lib/drupal-mode"))
+  (normal-top-level-add-to-load-path '(".")))
 (require 'drupal-mode)
 (require 'tramp)
 (setq tramp-default-method "sshx")
@@ -13,4 +14,4 @@
                            (replace-regexp "\\(foreach\\|\\for\\|if\\|while\\|switch\\)[ \t]*(\\(.*\\))[ \t]*{" "\\1 (\\2) {" nil (point-min) (point-max))
                            (replace-regexp "do[ \t]*{" "do {" nil (point-min) (point-max))
                            (replace-regexp "}[ \t]*while[ \t]*(\\(.*\\))[ \t]*;" "} while (\\1);" nil (point-min) (point-max)))))
-	    (set (make-local-variable 'compile-command) (format "phpcs --report=emacs --standard=/usr/share/php/PHP/CodeSniffer/Standards/Drupal/ruleset.xml --extensions=php,module,inc,install,test,profile,theme %s" (buffer-file-name)))))
+            (set (make-local-variable 'compile-command) (format "phpcs --report=emacs --standard=/usr/share/php/PHP/CodeSniffer/Standards/Drupal/ruleset.xml --extensions=php,module,inc,install,test,profile,theme %s" (buffer-file-name)))))

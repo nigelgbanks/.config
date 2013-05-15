@@ -1,5 +1,9 @@
 ;; Record the time it takes to load.
 (defvar *emacs-load-start* (current-time))
+;; Enable Emacs 24 package manager
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;; Append onto load-path so that they take precedence when loading.
 (defun normal-top-level-append-recursively-to-load-path ()
   (setq load-path
@@ -20,8 +24,9 @@
 (add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/speedbar")
 (add-to-list 'Info-default-directory-list "~/.emacs.d/lib/cedet-1.1/srecode")
 ;; Non package managed libraries. (recursive includes)
-(let ((default-directory "~/.emacs.d/lib"))
-  (normal-top-level-append-recursively-to-load-path))
+; Causes problems with packages that have the same name files like etags.
+;(let ((default-directory "~/.emacs.d/lib"))
+;  (normal-top-level-append-recursively-to-load-path))
 ;; Custom emacs code
 (let ((default-directory "~/.emacs.d/lisp"))
   (normal-top-level-append-recursively-to-load-path))
@@ -32,10 +37,6 @@
 (load "global-settings.el")
 ;; Load my global functions
 (load "global-functions.el")
-;; Enable Emacs 24 package manager
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;; Display the load time.
 (message "Emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
                                  (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
