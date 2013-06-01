@@ -38,3 +38,7 @@ downto(){
       cd **/$1
   fi
 }
+checkstyle() {
+    echo $1
+    java -jar ~/.config/java/checkstyle-5.6-all.jar $1
+}

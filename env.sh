@@ -23,9 +23,14 @@ else
     OS=$(uname -s)
     VER=$(uname -r)
 fi
+
 # Global Directories
 #===============================================================================
 CONFIG=$HOME/.config
+
+# Global Settings
+#===============================================================================
+export CLASSPATH=~/.config/java/*:$CLASSPATH
 
 # Platform Specific Directories
 #===============================================================================

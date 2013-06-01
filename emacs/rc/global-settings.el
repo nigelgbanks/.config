@@ -93,3 +93,9 @@
                                   indent-tabs-mode nil)))
 ;;(setq jdibug-connect-hosts "localhost:8000")
 ;;(setq jdibug-source-paths '("~/projects/fcrepo4/"))
+
+;; Ace Jump
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(global-set-key [?\C-c ?\C-f] 'ffap-other-window)
