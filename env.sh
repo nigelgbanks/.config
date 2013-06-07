@@ -30,7 +30,7 @@ CONFIG=$HOME/.config
 
 # Global Settings
 #===============================================================================
-export CLASSPATH=~/.config/java/*:$CLASSPATH
+
 
 # Platform Specific Directories
 #===============================================================================
