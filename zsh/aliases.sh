@@ -35,6 +35,7 @@ case "$OS" in
     ;;
 "Debian")
     alias time_sync="sudo ntpdate ntp.ubuntu.com"
+    alias jslint="node /opt/jslint/node_modules/jslint/bin/jslint.js"
     ;;
 "Red Hat")
     ;;
