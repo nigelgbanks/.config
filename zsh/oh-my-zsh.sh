@@ -7,6 +7,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 case "$OS" in
 
 "Darwin")
+    source $HOME/.rvm/scripts/rvm
     ;;
 "Debian")
     plugins+=debian
