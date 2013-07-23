@@ -1,5 +1,6 @@
 .DS_Store
 *~
+ghc/ghci_history
 auto-save-list/
 eshell/
 tramp
