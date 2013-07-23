@@ -1,6 +1,7 @@
 .DS_Store
 *~
 ghc/ghci_history
+ghc/x86_64-darwin-7.6.3
 auto-save-list/
 eshell/
 tramp

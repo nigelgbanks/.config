@@ -99,3 +99,7 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 (global-set-key [?\C-c ?\C-f] 'ffap-other-window)
+
+;; Haskell
+(custom-set-variables
+ '(haskell-mode-hook '(turn-on-haskell-indentation)))
