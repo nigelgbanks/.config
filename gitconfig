@@ -13,6 +13,9 @@
 	br = branch
 	ci = commit
 	re = remote
+	cp = cherry-pick
+	unstage = reset HEAD
+	uncommit = reset --soft HEAD^
 	aa = add --all :/
 	cached = diff --cached
 	amend = commit -a --amend
