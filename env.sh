@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Enviroment Variables that shouldn't be stored in git.
+#===============================================================================
+source $HOME/.env.sh
+
 # Getting OS Information
 #===============================================================================
 if [ -f /etc/lsb-release ]; then
