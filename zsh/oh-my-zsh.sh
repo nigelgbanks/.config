@@ -2,7 +2,7 @@
 ZSH=$CONFIG/zsh/oh-my-zsh
 ZSH_CUSTOM=$CONFIG/zsh
 ZSH_THEME="nbanks"
-plugins=(git ssh-agent github rvm)
+plugins=(git ssh-agent github rvm vagrant)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 case "$OS" in
 
