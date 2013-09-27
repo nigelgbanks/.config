@@ -61,6 +61,10 @@ esac
 #===============================================================================
 case $HOST in
 
+"hal.local")
+    PATH=$PATH:$HOME/Library/Haskell/bin
+    ;;
+
 "dev.local")
     PATH=$PATH:$HOME/bin
     ;;

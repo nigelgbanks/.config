@@ -29,3 +29,5 @@ esac
 # Get the latest
 #===============================================================================
 cd $CONFIG && git pull && cd $HOME
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
