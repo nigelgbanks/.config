@@ -49,5 +49,5 @@ case "$HOST" in
 esac
 alias modules-status='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && cd ..; done'
 alias modified-modules-status='modules-status | grep ✗'
-alias modules-update='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && git update && cd .. && done'
-alias modules-update-bg='for d in */.git/..; do cd $d && d=${PWD##*/} &&  b=`g current` && echo "$d ($b)" && git update && cd .. && done &>/dev/null &'
+alias modules-update='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && git update; cd ..; done'
+alias modules-update-bg='for d in */.git/..; do cd $d && d=${PWD##*/} &&  b=`g current` && echo "$d ($b)" && git update; cd ..; done &>/dev/null &'
