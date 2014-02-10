@@ -30,4 +30,5 @@ esac
 #===============================================================================
 cd $CONFIG && git pull && cd $HOME
 
+# PATH=/Applications/MAMP/bin/php/php5.3.27/bin:/Applications/MAMP/bin/apache2/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
