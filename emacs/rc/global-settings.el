@@ -103,3 +103,26 @@
 ;; Haskell
 (custom-set-variables
  '(haskell-mode-hook '(turn-on-haskell-indentation)))
+
+;; Text Mode
+(add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+(add-hook 'markdown-mode-hook
+  '(lambda() (set-fill-column 80)))
+
+ (dolist (hook '(markdown-mode-hook))
+      (add-hook hook (lambda () (flyspell-mode 1))))
+
+;;; Stefan Monnier <foo at acm.org>. It is the opposite of fill-paragraph
+(defun unfill-paragraph ()
+  "Takes a multi-line paragraph and makes it into a single line of text."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(defun unfill-region (beg end)
+  "Unfill the region, joining text paragraphs into a single
+    logical line.  This is useful, e.g., for use with
+    `visual-line-mode'."
+  (interactive "*r")
+  (let ((fill-column (point-max)))
+    (fill-region beg end)))

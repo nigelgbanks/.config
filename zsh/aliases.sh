@@ -1,4 +1,4 @@
-# Navigation/Shortcuts
+# Navigation / Shortcuts
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
@@ -51,3 +51,7 @@ alias modules-status='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bol
 alias modified-modules-status='modules-status | grep ✗'
 alias modules-update='for d in */.git/..; do cd $d && d=${PWD##*/} && x="$fg_bold[blue]$(git_prompt_info)" && echo "$d ${(%)x}" && git update; cd ..; done'
 alias modules-update-bg='for d in */.git/..; do cd $d && d=${PWD##*/} &&  b=`g current` && echo "$d ($b)" && git update; cd ..; done &>/dev/null &'
+
+alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
